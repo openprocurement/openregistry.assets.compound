@@ -1,0 +1,72 @@
+PATCH /api/0.1/assets/f7d85ded1544424d82a3473f9467f80f?acc_token=1803ee39a2164a3dacd9aee5e581aa7d HTTP/1.0
+Authorization: Basic YnJva2VyOg==
+Content-Length: 347
+Content-Type: application/json
+Host: lb.api-sandbox.registry.ea.openprocurement.net
+
+{
+  "data": {
+    "description": "Земельні ділянки із великими покладами благородних металів"
+  }
+}
+
+
+200 OK
+Content-Type: application/json
+X-Content-Type-Options: nosniff
+
+{
+  "data": {
+    "status": "pending", 
+    "assetType": "basic", 
+    "description": "Земельні ділянки із великими покладами благородних металів", 
+    "classification": {
+      "scheme": "CAV",
+      "description": "Земельні ділянки", 
+      "id": "39513200-3"
+    }, 
+    "title": "Земля для космодрому", 
+    "assetID": "UA-2017-08-16-000001", 
+    "value": {
+      "currency": "UAH", 
+      "amount": 100.0, 
+      "valueAddedTaxIncluded": true
+    }, 
+    "dateModified": "2017-08-16T18:36:14.133838+03:00", 
+    "owner": "broker", 
+    "assetCustodian": {
+      "contactPoint": {
+        "name": "Державне управління справами", 
+        "telephone": "0440000000"
+      }, 
+      "identifier": {
+        "scheme": "UA-EDR", 
+        "id": "00037256", 
+        "uri": "http://www.dus.gov.ua/"
+      }, 
+      "name": "Державне управління справами", 
+      "address": {
+        "postalCode": "01220", 
+        "countryName": "Україна", 
+        "streetAddress": "вул. Банкова, 11, корпус 1", 
+        "region": "м. Київ", 
+        "locality": "м. Київ"
+      }
+    }, 
+    "address": {
+      "postalCode": "79000", 
+      "countryName": "Україна", 
+      "streetAddress": "вул. Банкова 1", 
+      "region": "м. Київ", 
+      "locality": "м. Київ"
+    }, 
+    "date": "2017-08-16T18:36:13.882146+03:00", 
+    "id": "f7d85ded1544424d82a3473f9467f80f", 
+    "unit": {
+      "code": "39513200-3",
+      "name": "item"
+    }, 
+    "quantity": 5
+  }
+}
+
