@@ -1,0 +1,306 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: openprocurement.auctions.dgf 1.1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-03 17:47+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Basic Asset"
+msgstr "Basic Asset"
+
+msgid "Schema"
+msgstr "Схема"
+
+msgid "string, auto-generated, read-only"
+msgstr "рядок, генерується автоматично, лише для читання"
+
+msgid "The asset identifier to refer it to in the `paper` documentation."
+msgstr "Ідентифікатор активу, щоб знайти його у `паперовій` документації."
+
+msgid ""
+"|ocdsDescription| AssetID is included to make the flattened data structure "
+"more convenient."
+msgstr ""
+"|ocdsDescription| AssetID включають, щоб зробити структуру даних більш "
+"зручною та читабельною."
+
+msgid "The date of asset creation/undoing."
+msgstr "Дата створення/знищення активу."
+
+msgid "|ocdsDescription| Date when the asset was last modified."
+msgstr "|ocdsDescription| Дата внесення останніх змін до активу."
+
+msgid "optional"
+msgstr "не обов'язково"
+
+msgid "The additional parameter with a value ``test``."
+msgstr "Додатковий параметр, що вказує на тестовий режим."
+
+msgid "string, required"
+msgstr "рядок, обов'язковий"
+
+msgid "The asset status within the Registry."
+msgstr "Статус запису в реєстрі активів."
+
+msgid "string, required in `active` status"
+msgstr "рядок, обов'язковий у статусі `active`"
+
+msgid "ID of the related Lot."
+msgstr "Ідентифікатор лоту, до якого належить актив."
+
+msgid "Type of the given asset."
+msgstr "Тип активу."
+
+msgid "string, multilingual"
+msgstr "рядок, багатомовний"
+
+msgid "Ukrainian by default (required) - Ukrainian title"
+msgstr "українською за замовчуванням - заголовок українською, обов'язково"
+
+msgid "``title_en`` (English) - English title"
+msgstr "``title_en`` (English) - заголовок англійською"
+
+msgid "``title_ru`` (Russian) - Russian title"
+msgstr "``title_ru`` (Russian) - заголовок російською"
+
+msgid "Oprionally can be mentioned in English/Russian."
+msgstr "Вказання заголовку англійсько/російською не обов'язкове."
+
+msgid "string, multilingual, optional"
+msgstr "рядок, багатомовний, не обов'язковий"
+
+msgid "|ocdsDescription| A description of the goods, services to be provided."
+msgstr "|ocdsDescription| Опис товарів та послуг, які повинні бути надані."
+
+msgid "Ukrainian by default - Ukrainian decription"
+msgstr "Українською за замовчуванням - опис українською"
+
+msgid "``decription_en`` (English) - English decription"
+msgstr "``decription_en`` (English) - опис англійською"
+
+msgid "``decription_ru`` (Russian) - Russian decription"
+msgstr "``decription_ru`` (Russian)  - опис російською"
+
+msgid "|ocdsDescription| All related documents and attachments."
+msgstr "|ocdsDescription| Пов'язані з активом документи та додатки."
+
+msgid ":ref:`Organization`, required"
+msgstr ":ref:`Organization`, обов'язково"
+
+msgid "The entity managing the asset."
+msgstr "Розпорядник активу."
+
+msgid ":ref:`Classification`, required"
+msgstr ":ref:`Classification`, обов'язково"
+
+msgid "The primary classification for the asset."
+msgstr "Початкова класифікація активу."
+
+msgid ""
+"It is required for `classification.scheme` to be `CAV`. The "
+"`classification.id` should be valid CAV code."
+msgstr ""
+"Класифікація `classification.scheme` обов’язково повинна бути CAV. "
+"`classification.id` повинно бути дійсним CAV кодом."
+
+msgid "List of :ref:`Classification` objects, optioanl"
+msgstr "Список об’єктів :ref:`Classification`, не обов'язково"
+
+msgid ""
+"|ocdsDescription| An array of additional classifications for the item. See "
+"the `itemClassificationScheme` codelist for common options to use in OCDS. "
+"This may also be used to present codes from an internal classification "
+"scheme."
+msgstr ""
+"|ocdsDescription| Масив додаткових класифікацій для елемента. Дивіться у "
+"список кодів `itemClassificationScheme`, щоб використати поширені варіанти в"
+" OCDS. Також можна використовувати для представлення кодів з внутрішньої "
+"схеми класифікації."
+
+msgid "One of the possible additional classifiers is CAVS."
+msgstr "Один з можливих додаткових класифікаторів - CAVS."
+
+msgid ":ref:`Unit`, required"
+msgstr ":ref:`Unit`, обов'язково"
+
+msgid ""
+"|ocdsDescription| Description of the unit which the good comes in e.g.  "
+"hours, kilograms. Made up of a unit name, and the value of a single unit."
+msgstr ""
+"|ocdsDescription| Опис одиниці виміру товару, наприклад, години, кілограми. "
+"Складається з назви одиниці та значення однієї одиниці."
+
+msgid "integer, required"
+msgstr "ціле число, обов'язково"
+
+msgid "|ocdsDescription| The number of units required."
+msgstr "|ocdsDescription| Кількість необхідних одиниць."
+
+msgid "dictionary"
+msgstr "словник"
+
+msgid ""
+"Geographical coordinates of the location. Element consists of the following "
+"items:"
+msgstr ""
+"Географічні координати місця розташування. Складається з таких компонентів:"
+
+msgid "string, optional, usually not used"
+msgstr "рядок, не обов’язково, переважно не використовується"
+
+msgid "Classification"
+msgstr "Classification"
+
+msgid "string"
+msgstr "рядок"
+
+msgid ""
+"|ocdsDescription| A classification should be drawn from an existing scheme "
+"or list of codes.  This field is used to indicate the scheme/codelist from "
+"which the classification is drawn.  For line item classifications, this "
+"value should represent a known Item Classification Scheme wherever possible."
+msgstr ""
+"|ocdsDescription| Класифікація повинна бути взята з існуючої схеми або "
+"списку кодів. Це поле використовується, щоб вказати схему/список кодів, з "
+"яких буде братись класифікація. Для класифікацій лінійних елементів це "
+"значення повинно представляти відому Схему Класифікації Елементів, де це "
+"можливо."
+
+msgid ""
+"|ocdsDescription| The classification code drawn from the selected scheme."
+msgstr "|ocdsDescription| Код класифікації взятий з вибраної схеми."
+
+msgid "|ocdsDescription| A textual description or title for the code."
+msgstr "|ocdsDescription| Текстовий опис або назва коду."
+
+msgid "uri"
+msgstr "uri"
+
+msgid ""
+"|ocdsDescription| A URI to identify the code. In the event individual URIs "
+"are not available for items in the identifier scheme this value should be "
+"left blank."
+msgstr ""
+"|ocdsDescription| URI для ідентифікації коду. Якщо індивідуальні URI не "
+"доступні для елементів у схемі ідентифікації, це значення треба залишити "
+"пустим."
+
+msgid "Unit"
+msgstr "Unit"
+
+msgid "UN/CEFACT Recommendation 20 unit code."
+msgstr "Код одиниці виміру в UN/CEFACT Recommendation 20."
+
+msgid "|ocdsDescription| Name of the unit"
+msgstr "|ocdsDescription| Назва одиниці виміру"
+
+msgid ":ref:`Value`, required"
+msgstr ":ref:`Value`, обов'язково"
+
+msgid "Estimated asset value."
+msgstr "Оціночна вартість."
+
+msgid "float, required"
+msgstr "float, обов'язково"
+
+msgid "Should be positive."
+msgstr "Повинно бути додатним."
+
+msgid "|ocdsDescription| The currency in 3-letter ISO 4217 format."
+msgstr "|ocdsDescription| Валюта у трибуквенному форматі ISO 4217."
+
+msgid "valueAddedTaxIncluded"
+msgstr "valueAddedTaxIncluded"
+
+msgid "bool, required"
+msgstr "булеве значення, обов’язково"
+
+msgid "id"
+msgstr ""
+
+msgid "assetID"
+msgstr ""
+
+msgid "date"
+msgstr ""
+
+msgid "dateModified"
+msgstr ""
+
+msgid "mode"
+msgstr ""
+
+msgid "status"
+msgstr ""
+
+msgid "value"
+msgstr ""
+
+msgid "relatedLot"
+msgstr ""
+
+msgid "assetType"
+msgstr ""
+
+msgid "title"
+msgstr ""
+
+msgid "description"
+msgstr ""
+
+msgid "documents"
+msgstr ""
+
+msgid "assetCustodian"
+msgstr ""
+
+msgid "classification"
+msgstr ""
+
+msgid "additionalClassifications"
+msgstr ""
+
+msgid "unit"
+msgstr ""
+
+msgid "quantity"
+msgstr ""
+
+msgid "location"
+msgstr ""
+
+msgid "latitude"
+msgstr ""
+
+msgid "longitude"
+msgstr ""
+
+msgid "elevation"
+msgstr ""
+
+msgid "scheme"
+msgstr ""
+
+msgid "code"
+msgstr ""
+
+msgid "name"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "amount"
+msgstr ""
+
+msgid "currency"
+msgstr ""
+
+#~ msgid "|ocdsDescription| Amount as a number."
+#~ msgstr "|ocdsDescription|Кількість як число."
