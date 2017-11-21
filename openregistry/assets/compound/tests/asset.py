@@ -4,7 +4,7 @@ import unittest
 from openregistry.api.tests.base import snitch
 from openregistry.api.tests.blanks.mixins import ResourceTestMixin
 
-from openregistry.assets.core.tests.blanks.asset import patch_decimal_with_items
+from openregistry.assets.core.tests.blanks.asset import patch_decimal_item_quantity
 from openregistry.assets.core.tests.blanks.mixins import AssetResourceTestMixin
 
 from openregistry.assets.compound.models import Asset as AssetCompound
@@ -18,7 +18,7 @@ class AssetCompoundResourceTest(BaseAssetWebTest, ResourceTestMixin, AssetResour
     initial_data = test_asset_compound_data
     initial_status = 'pending'
 
-    test_19_patch_decimal_witt_items = snitch(patch_decimal_with_items)
+    test_19_patch_decimal_witt_items = snitch(patch_decimal_item_quantity)
 
 
 def suite():
