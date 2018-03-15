@@ -3,7 +3,7 @@ from schematics.types import StringType
 from schematics.types.compound import ListType, ModelType
 from zope.interface import implementer
 
-from openregistry.api.models.ocds import Item
+from openprocurement.api.registry_models.ocds import Item
 
 from openregistry.assets.core.models import (
     IAsset, Asset as BaseAsset,
