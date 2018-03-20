@@ -42,7 +42,7 @@ Project status
 The project has pre alpha status.
 
 The source repository for this project is on GitHub: 
-https://github.com/openprocurement/openregistry.api  
+https://github.com/openprocurement/openprocurement.api  
 
 Documentation of related packages
 ---------------------------------
