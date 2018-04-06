@@ -2,11 +2,12 @@
 import unittest
 from copy import deepcopy
 
-from openprocurement.api.tests.base import snitch
-from openprocurement.api.tests.blanks.mixins import ResourceTestMixin
-
 from openregistry.assets.core.tests.blanks.asset import patch_decimal_item_quantity
-from openregistry.assets.core.tests.blanks.mixins import AssetResourceTestMixin
+from openregistry.assets.core.tests.blanks.mixins import (
+    AssetResourceTestMixin,
+    ResourceTestMixin,
+    snitch
+)
 
 from openregistry.assets.compound.models import Asset as AssetCompound
 from openregistry.assets.compound.tests.base import (
