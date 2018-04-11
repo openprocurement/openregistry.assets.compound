@@ -2,7 +2,16 @@
 from pyramid.interfaces import IRequest
 from openregistry.assets.core.includeme import IContentConfigurator
 from openregistry.assets.compound.models import Asset, ICompoundAsset
-from openregistry.assets.compound.adapters import CompoundAssetConfigurator
+from openregistry.assets.compound.adapters import (
+    CompoundAssetConfigurator,
+    AssetCompoundManagerAdapter,
+    AssetCompoundDocumentManager
+)
+from openregistry.assets.compound.interfaces import (
+    IAssetManager,
+    IAssetDocumentManager
+)
+
 
 
 def includeme(config):
@@ -12,3 +21,10 @@ def includeme(config):
     config.registry.registerAdapter(CompoundAssetConfigurator,
                                     (ICompoundAsset, IRequest),
                                     IContentConfigurator)
+    config.registry.registerAdapter(AssetCompoundManagerAdapter,
+                                    (ICompoundAsset,),
+                                    IAssetManager)
+    config.registry.registerAdapter(AssetCompoundDocumentManager,
+                                    (ICompoundAsset,),
+                                    IAssetDocumentManager)
+
