@@ -5,11 +5,9 @@ from openregistry.assets.compound.models import Asset, ICompoundAsset
 from openregistry.assets.compound.adapters import (
     CompoundAssetConfigurator,
     AssetCompoundManagerAdapter,
-    AssetCompoundDocumentManager
 )
 from openregistry.assets.compound.interfaces import (
     IAssetManager,
-    IAssetDocumentManager
 )
 
 
@@ -24,7 +22,3 @@ def includeme(config):
     config.registry.registerAdapter(AssetCompoundManagerAdapter,
                                     (ICompoundAsset,),
                                     IAssetManager)
-    config.registry.registerAdapter(AssetCompoundDocumentManager,
-                                    (ICompoundAsset,),
-                                    IAssetDocumentManager)
-
