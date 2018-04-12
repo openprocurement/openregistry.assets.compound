@@ -7,15 +7,11 @@ from zope.interface import (
 class IAssetManager(Interface):
     name = Attribute('Asset name')
 
-    def change_asset(request, context, logger):
+    def change_asset(request, context):
         raise NotImplementedError
 
-    def create_asset(request, context, logger, db, server_id):
+    def create_asset(request, context, db, server_id):
         raise NotImplementedError
-
-
-class IAssetDocumentManager(Interface):
-    name = Attribute('Asset name')
 
     def get_all_documents(request, context):
         raise NotImplementedError
@@ -23,11 +19,11 @@ class IAssetDocumentManager(Interface):
     def get_document(request):
         raise NotImplementedError
 
-    def add_document(request, logger):
+    def add_document(request):
         raise NotImplementedError
 
-    def put_document(request, logger):
+    def put_document(request):
         raise NotImplementedError
 
-    def patch_document(request, logger):
+    def patch_document(request):
         raise NotImplementedError
