@@ -2,6 +2,8 @@
 from openregistry.assets.core.adapters import AssetConfigurator
 from openregistry.assets.core.constants import STATUS_CHANGES
 
+from openprocurement.api.utils import error_handler
+
 from openregistry.assets.compound.utils import (
     change_asset,
     create_asset,
@@ -11,6 +13,43 @@ from openregistry.assets.compound.utils import (
     put_document,
     get_all_documents
 )
+
+from openregistry.assets.core.validation import (
+    validate_patch_asset_data,
+    validate_data_by_model,
+    validate_asset_data,
+    validate_document_operation_in_not_allowed_asset_status,
+    validate_asset_document_update_not_by_author_or_asset_owner,
+
+)
+from openprocurement.api.validation import (
+    validate_change_status,
+    validate_file_upload,
+    validate_document_data,
+    validate_patch_document_data,
+
+)
+
+patch_asset_validators = (
+    validate_patch_asset_data,
+    validate_change_status,
+    validate_data_by_model
+)
+add_document_validators = (
+    validate_file_upload,
+    validate_document_operation_in_not_allowed_asset_status
+)
+put_documet_validators = (
+    validate_document_data,
+    validate_document_operation_in_not_allowed_asset_status,
+    validate_asset_document_update_not_by_author_or_asset_owner
+)
+patch_document_validators = (
+    validate_patch_document_data,
+    validate_document_operation_in_not_allowed_asset_status,
+    validate_asset_document_update_not_by_author_or_asset_owner
+)
+
 
 class CompoundAssetConfigurator(AssetConfigurator):
     """ BelowThreshold Tender configuration adapter """
@@ -22,34 +61,43 @@ class CompoundAssetConfigurator(AssetConfigurator):
 class AssetCompoundManagerAdapter(object):
     name = "Asset Manager for compound asset"
     context = None
+    create_validation = (validate_asset_data, )
+    change_validation = patch_asset_validators
+
+    document_add_validation = add_document_validators
+    document_patch_validation = patch_document_validators
+    document_put_validation = put_documet_validators
 
     def __init__(self, context):
         self.context = context
 
-    def change_asset(self, request, logger):
-        return change_asset(request, self.context, logger)
+    def _validate(self, request, validators):
+        kwargs = {'request': request, 'error_handler': error_handler}
+        for validator in validators:
+            validator(**kwargs)
 
-    def create_asset(self, request, logger, db, server_id):
-        return create_asset(request, self.context, logger, db, server_id)
+    def change_asset(self, request):
+        self._validate(request, self.change_validation)
+        return change_asset(request, self.context)
 
-
-class AssetCompoundDocumentManager(object):
-
-    def __init__(self, context):
-        self.asset = context
-
+    def create_asset(self, request, db, server_id):
+        self._validate(request, self.create_validation)
+        return create_asset(request, self.context, db, server_id)
 
     def get_asset_documents(self, request):
-        return get_all_documents(request, self.asset)
+        return get_all_documents(request, self.context)
 
     def get_asset_document(self, request):
         return get_document(request)
 
-    def add_asset_document(self, request, logger):
-        return add_document(request, self.asset, logger)
+    def add_asset_document(self, request):
+        self._validate(request, self.document_add_validation)
+        return add_document(request, self.context)
 
-    def patch_asset_document(self, request, logger):
-        return patch_document(request, logger)
+    def patch_asset_document(self, request):
+        self._validate(request, self.document_patch_validation)
+        return patch_document(request)
 
-    def put_asset_document(self, request, logger):
-        return put_document(request, logger)
+    def put_asset_document(self, request):
+        self._validate(request, self.document_put_validation)
+        return put_document(request)
