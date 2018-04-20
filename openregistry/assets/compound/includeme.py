@@ -5,7 +5,7 @@ from openregistry.assets.compound.models import Asset, ICompoundAsset
 from openregistry.assets.compound.adapters import CompoundAssetConfigurator
 
 
-def includeme(config):
+def includeme(config, plugin_config=None):
     config.add_assetType(Asset)
     config.scan("openregistry.assets.compound.views")
     config.scan("openregistry.assets.compound.subscribers")
