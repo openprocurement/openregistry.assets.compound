@@ -4,7 +4,9 @@ from copy import deepcopy
 
 from openregistry.assets.core.tests.base import (
     BaseAssetWebTest as BaseAWT,
-    test_asset_compound_data
+    test_asset_compound_data,
+    test_asset_compound_data_341,
+    test_asset_compound_data_060
 )
 
 
