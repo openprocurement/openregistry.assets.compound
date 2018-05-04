@@ -20,4 +20,3 @@ class CompoundAssetManagerAdapter(AssetManagerAdapter):
 
     def create_asset(self, request):
         self._validate(request, self.create_validation)
-        print 'kek'
