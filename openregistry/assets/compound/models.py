@@ -14,5 +14,6 @@ class ICompoundAsset(IAsset):
 
 @implementer(ICompoundAsset)
 class Asset(BaseAsset):
+    _internal_type = 'compound'
     assetType = StringType(default="compound")
     items = ListType(ModelType(Item))
