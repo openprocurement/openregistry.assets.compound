@@ -5,6 +5,8 @@ plugins:
       assets.core:
         plugins:
           assets.compound:
+            aliases: [compound1]
+            use_default: True
 
 config:
   auth:

@@ -16,6 +16,8 @@ class BaseAssetWebTest(BaseAWT):
 
     def setUp(self):
         self.initial_data = deepcopy(test_asset_compound_data)
+        asset_type = os.environ.get('ASSET_TYPE', 'compound')
+        self.initial_data['assetType'] = asset_type
         super(BaseAssetWebTest, self).setUp()
 
 
