@@ -8,7 +8,8 @@ from openregistry.assets.core.tests.base import (
     MOCK_CONFIG as BASE_MOCK_CONFIG,
     test_asset_compound_data,
     test_asset_compound_data_341,
-    test_asset_compound_data_060
+    test_asset_compound_data_060,
+    AssetTransferWebTest as AssetTWT
 )
 
 from openregistry.assets.compound.tests.fixtures import PARTIAL_MOCK_CONFIG
@@ -25,6 +26,16 @@ class BaseAssetWebTest(BaseAWT):
     def setUp(self):
         self.initial_data = deepcopy(test_asset_compound_data)
         super(BaseAssetWebTest, self).setUp()
+
+
+class AssetTransferWebTest(AssetTWT):
+    initial_auth = ('Basic', ('broker', ''))
+    relative_to = os.path.dirname(__file__)
+    mock_config = MOCK_CONFIG
+
+    def setUp(self):
+        self.initial_data = deepcopy(test_asset_compound_data)
+        super(AssetTransferWebTest, self).setUp()
 
 
 class AssetContentWebTest(BaseAssetWebTest):
